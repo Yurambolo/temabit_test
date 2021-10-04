@@ -1,0 +1,15 @@
+logger:
+  facility: "default"
+  level: "debug"
+  graylog_host: "graylog.fozzy.lan"
+  graylog_port: 12202
+  tag: "prod"
+  project: "L3iMessageTagger"
+  environment: "MTMailingReportService"
+  protocol: "GELF UDP"
+  offline: 1
+database_local:
+  user: "postgres"
+  password: "159753046"
+  host: "localhost"
+  port: "5432"
