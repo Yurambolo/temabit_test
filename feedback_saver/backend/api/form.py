@@ -11,6 +11,13 @@ def get_form(request: web.Request):
     - Form
     produces:
     - text/plain
+    parameters:
+        - in: path
+          name: portal_id
+          type: integer
+          format: int64
+          description: portal id
+          required: false
     responses:
         "200":
             description: successful operation. Return feedback form

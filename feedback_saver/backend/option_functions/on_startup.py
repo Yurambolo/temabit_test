@@ -2,6 +2,7 @@ import aiohttp_jinja2
 import jinja2
 from aiopg import create_pool
 from config_loader import load_module_config
+from aiohttp_swagger import setup_swagger
 
 from backend.api import form_routes
 
@@ -37,3 +38,7 @@ async def init_db_connection(app):
     dsn = f'dbname={app["settings"].DB_NAME} user={config["user"]} password={config["password"]} host={config["host"]}'
     connection = await create_pool(dsn)
     app['db_connection'] = connection
+
+
+async def init_swagger(app):
+    setup_swagger(app)
